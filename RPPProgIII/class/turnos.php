@@ -3,7 +3,7 @@
 require_once './class/filemanager.php';
 require_once './class/servicios.php';
 require_once './class/auto.php';
-require_once './class/turnos.php';
+
 
 class Turno extends FileManager
 {

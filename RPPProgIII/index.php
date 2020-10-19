@@ -12,8 +12,7 @@ require_once './class/turnos.php';
 require_once "./class/jwt.php";
 
 require __DIR__ . '/vendor/autoload.php';
-//composer require firebase/php-jwt
-//use \Firebase\JWT\JWT;
+
 
 $method = $_SERVER["REQUEST_METHOD"];
 $path_info = $_SERVER["PATH_INFO"];
@@ -82,25 +81,8 @@ switch ($method) {
                 }
                 break;
 
-            case "/patente":
-                // if (isset($_POST['patente']) && isset($_POST['tipo'])) {
-
-                //     if ($token = Token::decifrarToken($_SERVER['HTTP_TOKEN'])) {
-                //         if ($token->tipo == "user") {
-
-                //             $ingreso = new Auto($_POST['patente'], date('d-m-Y h:i A'), $_POST['tipo'], $token->email);
-                //             Auto::saveAutoJson($ingreso);
-                //             echo ("Se cargo el ingreso correctamente");
-                //         } else {
-                //             echo ("Usuario no autorizado para esta acción ");
-                //         }
-                //     } else {
-                //         echo ("Error de autentificación ");
-                //     }
-                // } else {
-                //     echo "FALTAN DATOS DE INGRESO";
-                // }
-                // break;
+            case "":
+ 
 
             default:
                 # code...

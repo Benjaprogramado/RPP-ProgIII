@@ -81,32 +81,7 @@ class Auto extends FileManager
     }
 
 
-    // public static function assignPrice($modelo)
-    // {
-    //     $precios = Servicio::readPrecioJson();
-    //     $hora = "";
-    //     $estadia = "";
-    //     $mensual = "";
-    //     foreach ($precios as $value) {
-    //         $hora = $value->_precio_hora;
-    //         $estadia = $value->_precio_estadia;
-    //         $mensual = $value->_precio_mensual;
-    //     }
-    //     switch ($modelo) {
-    //         case 'hora':
-    //             return $hora;
-    //             break;
-    //         case 'estadia':
-    //             return $estadia;
-    //             break;
-    //         case 'mensual':
-    //             return $mensual;
-    //             break;
-    //         default:
-    //             return "null";
-    //             break;
-    //     }
-    // }
+
 
     public static function findCar($patente)
     {
@@ -114,7 +89,7 @@ class Auto extends FileManager
 
         $listaDatos = Auto::readAutoJson();
         if (empty($listaDatos)) {
-            
+
             return false;
         } else {
             foreach ($listaDatos as $value) {
@@ -136,38 +111,19 @@ class Auto extends FileManager
 
         $listaDatos = Auto::readAutoJson();
         if (empty($listaDatos)) {
-            echo("NO EXISTE ".$patente);
+            echo ("NO EXISTE " . $patente);
             return false;
         } else {
             foreach ($listaDatos as $value) {
-                if (strcasecmp ( $value->_patente , $patente )==0) {
+                if (strcasecmp($value->_patente, $patente) == 0) {
                     $aux = true;
                     return new Auto($value->_patente, $value->_marca, $value->_modelo, $value->_precio);
                 }
             }
         }
         if ($aux == false) {
-            echo("NO EXISTE ".$patente);
+            echo ("NO EXISTE " . $patente);
             return false;
         }
     }
-
-    // public static function calcularImporte($modelo)
-    // {
-    //     $listaDatos = Auto::readAutoJson();
-    //     $aux = 0;
-    //     if (empty($listaDatos)) {
-    //         echo ("NO HAY vehiculos CARGADOS");
-    //         return false;
-    //     } else {
-    //         foreach ($listaDatos as $value) {
-    //             if ($value->_modelo == $modelo) {
-    //                 $aux += self::assignPrice($modelo);
-    //             }
-    //         }
-    //         echo ("El total por " . $modelo . " es " . $aux);
-    //     }
-    // }
-
-
 }
