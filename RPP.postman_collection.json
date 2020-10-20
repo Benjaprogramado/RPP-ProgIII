@@ -1,0 +1,301 @@
+{
+	"info": {
+		"_postman_id": "cb7c165d-c71e-464f-b261-dbd39683e155",
+		"name": "RPP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST registro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "user@mail.com",
+							"type": "text"
+						},
+						{
+							"key": "tipo",
+							"value": "user",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1\\TrabajoEnClases\\RPPProgIII\\index.php\\registro",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"TrabajoEnClases",
+						"RPPProgIII",
+						"index.php",
+						"registro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "admin@mail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1\\TrabajoEnClases\\RPPProgIII\\index.php\\login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"TrabajoEnClases",
+						"RPPProgIII",
+						"index.php",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST vehiculo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwidGlwbyI6ImFkbWluIn0.BenmGU3utHjGNOFjl4FmGw-hE_teCsVYTtHPzhZ6lCA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "patente",
+							"value": "bbb123",
+							"type": "text"
+						},
+						{
+							"key": "marca",
+							"value": "Ford",
+							"type": "text"
+						},
+						{
+							"key": "modelo",
+							"value": "Ka",
+							"type": "text"
+						},
+						{
+							"key": "precio",
+							"value": "190000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1\\TrabajoEnClases\\RPPProgIII\\index.php\\vehiculo",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"TrabajoEnClases",
+						"RPPProgIII",
+						"index.php",
+						"vehiculo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET patente",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwidGlwbyI6ImFkbWluIn0.BenmGU3utHjGNOFjl4FmGw-hE_teCsVYTtHPzhZ6lCA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1/TrabajoEnClases/RPPProgIII/index.php/patente?patente=Aaa123",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"TrabajoEnClases",
+						"RPPProgIII",
+						"index.php",
+						"patente"
+					],
+					"query": [
+						{
+							"key": "patente",
+							"value": "Aaa123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET servicio",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwidGlwbyI6ImFkbWluIn0.BenmGU3utHjGNOFjl4FmGw-hE_teCsVYTtHPzhZ6lCA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1/TrabajoEnClases/RPPProgIII/index.php/servicio?nombre=Limpieza&id=25&tipo=10000km&precio=5000&demora=10hs",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"TrabajoEnClases",
+						"RPPProgIII",
+						"index.php",
+						"servicio"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": "Limpieza"
+						},
+						{
+							"key": "id",
+							"value": "25"
+						},
+						{
+							"key": "tipo",
+							"value": "10000km"
+						},
+						{
+							"key": "precio",
+							"value": "5000"
+						},
+						{
+							"key": "demora",
+							"value": "10hs"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET turno",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwidGlwbyI6ImFkbWluIn0.BenmGU3utHjGNOFjl4FmGw-hE_teCsVYTtHPzhZ6lCA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1/TrabajoEnClases/RPPProgIII/index.php/turno",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"TrabajoEnClases",
+						"RPPProgIII",
+						"index.php",
+						"turno"
+					],
+					"query": [
+						{
+							"key": "patente",
+							"value": "aaa123",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"id": "bce7280d-4f1b-4ae7-b730-09fb95f6dee5",
+			"key": "url",
+			"value": "http:\\\\127.0.0.1\\TrabajoEnClases\\RPP-ProgIII"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
